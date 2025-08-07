@@ -18,10 +18,10 @@ jobs:
           node-version: "18"
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm ci
 
       - name: Build Vite app
-        run: npm run build
+        run: pnpm run build
 
   merge-to-main:
     needs: build
