@@ -1,4 +1,4 @@
-name: Build and Merge React Vite App
+name: Build and Merge App
 
 on:
   push:
