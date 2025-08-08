@@ -1,0 +1,49 @@
+name: Build and Merge App
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout develop branch
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.19.0"
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Vite app
+        run: pnpm run build
+
+  merge-to-main:
+    needs: build
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Merge develop into main
+        run: |
+          git fetch origin develop
+          git checkout main
+          git merge origin/develop --no-ff -m "Auto-merge: develop → main"
+          git push origin main
