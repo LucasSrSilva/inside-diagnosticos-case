@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&family=Delius+Swash+Caps&family=Nata+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
-@import url("https://fonts.googleapis.com/css2?family=Borel&family=Delius+Swash+Caps&family=Nata+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap");
 @theme {
   --font-title: "nata-sans", sans-serif;
 }
