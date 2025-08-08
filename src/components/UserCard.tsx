@@ -11,7 +11,7 @@ const UserCard = ({ user }: { user: User }) => {
     return (
         <div className="transition-all duration-200">
 
-            <div className="">
+            <div>
                 <button
                     onClick={() => toggle()}
                     className="transition duration-200 w-full text-left text-xl rounded px-4 py-3  text-gray-100 font-medium bg-gray-700 hover:bg-gray-800 flex justify-between"
