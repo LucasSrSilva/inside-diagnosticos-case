@@ -21,8 +21,9 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-center my-10">Inside Diagnosticos <span className="text-2xl font-normal">- Case técnico</span></h1>
-      <section className="grid grid-cols-3 gap-4 mx-10" aria-label="usuarios registrados">
+      <h1 className="text-3xl font-bold text-center mt-10">Inside Diagnosticos</h1>
+      <h2 className="text-2xl font-normal text-center mb-5">Case técnico</h2>
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mx-10" aria-label="usuarios registrados">
         {users.map((user: User) => (
           <UserCard key={user.id} user={user} />
         ))}
